@@ -47,4 +47,4 @@ Other researchs on this topic:
 
 ## Preview
 
-![Demo](demo.gif "Flow demo")
+<img src="demo.gif" height="600">
