@@ -67,8 +67,17 @@ class IntentPlugin(private val registrar: Registrar, private val activity: Activ
                         } else {
                             android.util.Log.d("SENDER-INTENT", "no clipData")
                             android.util.Log.d("SENDER-INTENT", "intent.data:"+intent.data)
+
+                            var coord = intent.getStringExtra("coord")
+                            android.util.Log.d("SENDER-INTENT", "intent.extra.coord"+coord)
+                            var city = intent.getStringExtra("city")
+                            android.util.Log.d("SENDER-INTENT", "intent.extra.city"+city)
+                            var uri = intent.getStringExtra("uri")
+                            android.util.Log.d("SENDER-INTENT", "intent.extra.uri"+uri)
+
                             if (intent.data == null) {
-                                intent.data = Uri.parse("gcw://geocaching/cache?type=u&id=123456")
+                                //intent.data = Uri.parse("gcw://geocaching/cache?type=u&id=123456")
+                                intent.data = Uri.parse(uri+"&coord="+coord+"&city="+city)
                                 android.util.Log.d("SENDER-INTENT", "intent.data:" + intent.data)
                             }
 

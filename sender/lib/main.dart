@@ -68,16 +68,16 @@ class _SenderPageState extends State<SenderPage> {
               const Text(
                 'Text to send:',
               ),
-              TextField(
-                controller: myController,
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: TextField(
+                  controller: myController,
+                ),
               ),
               Container(
                 height: 40,
               ),
-              ElevatedButton(
-                onPressed: _openChooser,
-                child: const Text(' Intent with Chooser...'),
-              ),
+
               const Text(
                 'Choose an intent to send with result',
               ),
@@ -97,19 +97,19 @@ class _SenderPageState extends State<SenderPage> {
                   onPrimary: Colors.white, // foreground
                 ),
               ),
-              ElevatedButton(
-                onPressed: _sendWithResult_ReceiveIntent,
-                child: const Text(' Intent with result (ReceiveIntent)'),
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.grey, // background
-                  onPrimary: Colors.white, // foreground
-                ),
-              ),
+              // ElevatedButton(
+              //   onPressed: _sendWithResult_ReceiveIntent,
+              //   child: const Text(' Intent with result (ReceiveIntent)'),
+              //   style: ElevatedButton.styleFrom(
+              //     primary: Colors.grey, // background
+              //     onPrimary: Colors.white, // foreground
+              //   ),
+              // ),
               Container(
                 height: 40,
               ),
               const Text(
-                'This is the Result from intent:',
+                'This is the response from external app:',
               ),
               Text(
                 "${dataResult}",
@@ -120,6 +120,10 @@ class _SenderPageState extends State<SenderPage> {
               ),
               const Text(
                 'Send simple intent',
+              ),
+              ElevatedButton(
+                onPressed: _openChooser,
+                child: const Text(' Intent with Chooser...'),
               ),
               ElevatedButton(
                 onPressed: _sendIntent_AndroidIntentPlus,
@@ -142,7 +146,7 @@ class _SenderPageState extends State<SenderPage> {
       linker.ActivityResult result = await linker.Linker.startActivityForResult(
           new linker.Intent.fromAction(
             'android.intent.action.SEND',
-            uri: Uri.parse("gcw://geocaching/cache?type=u&id=123456"),
+            uri: Uri.parse("gcw://geocaching/cache?type=u&id=789"),
             //   ..addCategory('android.intent.category.DEFAULT')
             // ..setType("text/plain")
             // ..putExtra(
@@ -191,7 +195,7 @@ class _SenderPageState extends State<SenderPage> {
     }
   }
 
-  Future<void> _sendWithResult_ReceiveIntent() async {}
+  // Future<void> _sendWithResult_ReceiveIntent() async {}
 
   Future<void> _sendIntent_AndroidIntentPlus() async {
     try {

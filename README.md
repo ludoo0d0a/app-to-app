@@ -45,3 +45,6 @@ Other researchs on this topic:
 - [Comment puis-je transmettre des données entre les activités dans l'application Android?](https://www.it-swarm-fr.com/fr/android/comment-puis-je-transmettre-des-donnees-entre-les-activites-dans-lapplication-android/968254309/)
 - [Activity Results API: A better way to pass data between Activities](https://proandroiddev.com/is-onactivityresult-deprecated-in-activity-results-api-lets-deep-dive-into-it-302d5cf6edd)
 
+## Preview
+
+![Demo](demo.gif "Flow demo")

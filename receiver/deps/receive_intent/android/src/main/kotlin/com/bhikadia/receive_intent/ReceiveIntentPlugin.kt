@@ -65,9 +65,11 @@ class ReceiveIntentPlugin : FlutterPlugin, MethodCallHandler, EventChannel.Strea
                 android.util.Log.d("RECEIVER", "setResult: data not null")
                 val json = JSONObject(data)
                 android.util.Log.d("RECEIVER", "setResult: resultCode="+resultCode)
-                android.util.Log.d("RECEIVER", "setResult: json="+json)
+                android.util.Log.d("RECEIVER", "setResult: json data ="+json)
                 // https://developer.android.com/reference/android/app/Activity#setResult(int,%20android.content.Intent)
                 // Returns only extras (all json keys are copied through extras)
+
+                // corrd and city will be the 2 extra keys, no data
                 activity?.setResult(resultCode, jsonToIntent(json))
             }
             if (shouldFinish ?: false) {
